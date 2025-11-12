@@ -3,7 +3,7 @@
   top: 0;
   left: 0;
   right: 0;
-  padding: 10px 100px;
+  padding: 13px 144px;
   width: 100%;
   box-sizing: border-box;
   display: flex;
@@ -60,13 +60,13 @@
 
 .contactButton {
   color: #FFF;
+  padding: 10px 50px;
   font-weight: 600;
   font-size: 26px;
   line-height: 1;
-  letter-spacing: 0;
-  padding: 10px 50px;
-  border-radius: 100px;
+  letter-spacing: 0%;
   cursor: pointer;
+  border-radius: 100px;
   border: 3px solid #FFF;
   background-color: transparent;
 }
@@ -90,7 +90,7 @@
   font-style: normal;       
   font-size: 15px;
   line-height: 1;
-  letter-spacing: 0%; 
+  letter-spacing: 0%;
   text-decoration: none;
 }
 
