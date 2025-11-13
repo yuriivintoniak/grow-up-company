@@ -1,6 +1,8 @@
 import styles from "./HeroSection.module.css";
 import Header from "@/components/header/Header";
-import FeaturedProducts from "../featured-products/FeaturedProducts";
+import Footer from "@/components/footer/Footer";
+import ValuesSection from "@/components/values-section/ValuesSection";
+import FeaturedProducts from "@/components/featured-products/FeaturedProducts";
 
 export default function HeroSection() {
   return (
@@ -15,6 +17,10 @@ export default function HeroSection() {
         </button>
       </div>
       <FeaturedProducts />
+      <div className={styles.sectionFooterWrapper}>
+        <ValuesSection />
+        <Footer />
+      </div>
     </>
   );
 }

@@ -1,0 +1,66 @@
+.footer {
+  width: 100%;
+  padding: 0px 144px;
+  flex: 1;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  color: #FFF;
+  background-color: #174b08;
+}
+
+.footerContent {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.logoFooter {
+  width: 228px;
+  height: 259px;
+  margin-right: 133px;
+}
+
+.menuColumn {
+  display: flex;
+  gap: 24px;
+  flex-direction: column;
+}
+
+.columnTitle {
+  color: #FFF;
+  font-size: 40px;
+  font-weight: 600;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: 0%;
+}
+
+.menuColumn:not(:last-child) .columnTitle {
+  padding-left: 6px;
+}
+
+.menuList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 12px;
+  flex-direction: column;
+}
+
+.menuListItem {
+  color: #FFF;
+  font-size: 20px;
+  font-weight: 600;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: 0%;
+  display: flex;
+  align-items: center;
+}
+
+.menuListIcon {
+  color: #FFF;
+}
