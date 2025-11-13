@@ -4,6 +4,7 @@
   color: #fff;
   padding: 0 144px;
   text-align: left;
+  position: relative;
   background-image: url("@/assets/main-photo.png");
   background-size: cover;
   background-position: center;
