@@ -14,3 +14,55 @@
   gap: 5rem;
   grid-template-columns: repeat(4, 1fr);
 }
+
+.product {
+  position: relative;
+}
+
+.product img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 48px;
+  transition: box-shadow 0.4s ease;
+}
+
+.product:hover img {
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.7);
+}
+
+.productButton {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  width: 58px;
+  height: 58px;
+  border: none;
+  border-radius: 50%;
+  background-color: #FFF;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(24px);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.productButton:hover,
+.productButton:focus,
+.productButton:focus-visible {
+  outline: none;
+}
+
+.productButtonIcon {
+  color: #22780B;
+}
+
+.product:hover .productButton,
+.product:focus-within .productButton {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
