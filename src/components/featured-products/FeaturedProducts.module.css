@@ -16,19 +16,21 @@
 }
 
 .product {
+  overflow: hidden; 
   position: relative;
+  border-radius: 48px;
 }
 
 .product img {
   display: block;
   width: 100%;
   height: auto;
-  border-radius: 48px;
-  transition: box-shadow 0.4s ease;
+  transform: scale(1);
+  transition: transform 0.7s ease-in-out; 
 }
 
 .product:hover img {
-  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.7);
+  transform: scale(1.2);
 }
 
 .productButton {
@@ -45,6 +47,7 @@
   align-items: center;
   justify-content: center;
   opacity: 0;
+  z-index: 100;
   pointer-events: none;
   transform: translateY(24px);
   transition: transform 0.3s ease, opacity 0.3s ease;
