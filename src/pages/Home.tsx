@@ -1,9 +1,5 @@
-import HeroSection from "../components/hero-section/HeroSection";
+import Home from "@/components/home/Home";
 
-export function Home() {
-  return (
-    <div>
-      <HeroSection />
-    </div>
-  );
-};
+export function HomePage() {
+  return <Home />;
+}
