@@ -1,0 +1,29 @@
+.vegetablesSection {
+  text-align: center;
+  display: flex;
+  gap: 5rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 600;
+  margin: 0;
+  color: #1f2a1c;
+}
+
+.images {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 11rem;
+  row-gap: 5.5rem;
+  justify-content: center; 
+}
+
+.images img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}

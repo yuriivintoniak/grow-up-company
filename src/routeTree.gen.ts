@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as mainLayoutRouteRouteImport } from './routes/(main-layout)/route'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as mainLayoutAboutUsRouteImport } from './routes/(main-layout)/about-us'
+import { Route as mainLayoutVegetablesIndexRouteImport } from './routes/(main-layout)/vegetables/index'
 
 const mainLayoutRouteRoute = mainLayoutRouteRouteImport.update({
   id: '/(main-layout)',
@@ -27,27 +28,41 @@ const mainLayoutAboutUsRoute = mainLayoutAboutUsRouteImport.update({
   path: '/about-us',
   getParentRoute: () => mainLayoutRouteRoute,
 } as any)
+const mainLayoutVegetablesIndexRoute =
+  mainLayoutVegetablesIndexRouteImport.update({
+    id: '/vegetables/',
+    path: '/vegetables/',
+    getParentRoute: () => mainLayoutRouteRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about-us': typeof mainLayoutAboutUsRoute
+  '/vegetables': typeof mainLayoutVegetablesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about-us': typeof mainLayoutAboutUsRoute
+  '/vegetables': typeof mainLayoutVegetablesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/(main-layout)': typeof mainLayoutRouteRouteWithChildren
   '/(main-layout)/about-us': typeof mainLayoutAboutUsRoute
+  '/(main-layout)/vegetables/': typeof mainLayoutVegetablesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about-us'
+  fullPaths: '/' | '/about-us' | '/vegetables'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about-us'
-  id: '__root__' | '/' | '/(main-layout)' | '/(main-layout)/about-us'
+  to: '/' | '/about-us' | '/vegetables'
+  id:
+    | '__root__'
+    | '/'
+    | '/(main-layout)'
+    | '/(main-layout)/about-us'
+    | '/(main-layout)/vegetables/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -78,15 +93,24 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof mainLayoutAboutUsRouteImport
       parentRoute: typeof mainLayoutRouteRoute
     }
+    '/(main-layout)/vegetables/': {
+      id: '/(main-layout)/vegetables/'
+      path: '/vegetables'
+      fullPath: '/vegetables'
+      preLoaderRoute: typeof mainLayoutVegetablesIndexRouteImport
+      parentRoute: typeof mainLayoutRouteRoute
+    }
   }
 }
 
 interface mainLayoutRouteRouteChildren {
   mainLayoutAboutUsRoute: typeof mainLayoutAboutUsRoute
+  mainLayoutVegetablesIndexRoute: typeof mainLayoutVegetablesIndexRoute
 }
 
 const mainLayoutRouteRouteChildren: mainLayoutRouteRouteChildren = {
   mainLayoutAboutUsRoute: mainLayoutAboutUsRoute,
+  mainLayoutVegetablesIndexRoute: mainLayoutVegetablesIndexRoute,
 }
 
 const mainLayoutRouteRouteWithChildren = mainLayoutRouteRoute._addFileChildren(
