@@ -15,6 +15,7 @@ import { Route as mainLayoutAboutUsRouteImport } from './routes/(main-layout)/ab
 import { Route as mainLayoutVegetablesIndexRouteImport } from './routes/(main-layout)/vegetables/index'
 import { Route as mainLayoutFruitsIndexRouteImport } from './routes/(main-layout)/fruits/index'
 import { Route as mainLayoutvaluesSustainabillityRouteImport } from './routes/(main-layout)/(values)/sustainabillity'
+import { Route as mainLayoutvaluesQualityPolicyRouteImport } from './routes/(main-layout)/(values)/quality-policy'
 
 const mainLayoutRouteRoute = mainLayoutRouteRouteImport.update({
   id: '/(main-layout)',
@@ -47,10 +48,17 @@ const mainLayoutvaluesSustainabillityRoute =
     path: '/sustainabillity',
     getParentRoute: () => mainLayoutRouteRoute,
   } as any)
+const mainLayoutvaluesQualityPolicyRoute =
+  mainLayoutvaluesQualityPolicyRouteImport.update({
+    id: '/(values)/quality-policy',
+    path: '/quality-policy',
+    getParentRoute: () => mainLayoutRouteRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about-us': typeof mainLayoutAboutUsRoute
+  '/quality-policy': typeof mainLayoutvaluesQualityPolicyRoute
   '/sustainabillity': typeof mainLayoutvaluesSustainabillityRoute
   '/fruits': typeof mainLayoutFruitsIndexRoute
   '/vegetables': typeof mainLayoutVegetablesIndexRoute
@@ -58,6 +66,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about-us': typeof mainLayoutAboutUsRoute
+  '/quality-policy': typeof mainLayoutvaluesQualityPolicyRoute
   '/sustainabillity': typeof mainLayoutvaluesSustainabillityRoute
   '/fruits': typeof mainLayoutFruitsIndexRoute
   '/vegetables': typeof mainLayoutVegetablesIndexRoute
@@ -67,20 +76,34 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/(main-layout)': typeof mainLayoutRouteRouteWithChildren
   '/(main-layout)/about-us': typeof mainLayoutAboutUsRoute
+  '/(main-layout)/(values)/quality-policy': typeof mainLayoutvaluesQualityPolicyRoute
   '/(main-layout)/(values)/sustainabillity': typeof mainLayoutvaluesSustainabillityRoute
   '/(main-layout)/fruits/': typeof mainLayoutFruitsIndexRoute
   '/(main-layout)/vegetables/': typeof mainLayoutVegetablesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about-us' | '/sustainabillity' | '/fruits' | '/vegetables'
+  fullPaths:
+    | '/'
+    | '/about-us'
+    | '/quality-policy'
+    | '/sustainabillity'
+    | '/fruits'
+    | '/vegetables'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about-us' | '/sustainabillity' | '/fruits' | '/vegetables'
+  to:
+    | '/'
+    | '/about-us'
+    | '/quality-policy'
+    | '/sustainabillity'
+    | '/fruits'
+    | '/vegetables'
   id:
     | '__root__'
     | '/'
     | '/(main-layout)'
     | '/(main-layout)/about-us'
+    | '/(main-layout)/(values)/quality-policy'
     | '/(main-layout)/(values)/sustainabillity'
     | '/(main-layout)/fruits/'
     | '/(main-layout)/vegetables/'
@@ -135,11 +158,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof mainLayoutvaluesSustainabillityRouteImport
       parentRoute: typeof mainLayoutRouteRoute
     }
+    '/(main-layout)/(values)/quality-policy': {
+      id: '/(main-layout)/(values)/quality-policy'
+      path: '/quality-policy'
+      fullPath: '/quality-policy'
+      preLoaderRoute: typeof mainLayoutvaluesQualityPolicyRouteImport
+      parentRoute: typeof mainLayoutRouteRoute
+    }
   }
 }
 
 interface mainLayoutRouteRouteChildren {
   mainLayoutAboutUsRoute: typeof mainLayoutAboutUsRoute
+  mainLayoutvaluesQualityPolicyRoute: typeof mainLayoutvaluesQualityPolicyRoute
   mainLayoutvaluesSustainabillityRoute: typeof mainLayoutvaluesSustainabillityRoute
   mainLayoutFruitsIndexRoute: typeof mainLayoutFruitsIndexRoute
   mainLayoutVegetablesIndexRoute: typeof mainLayoutVegetablesIndexRoute
@@ -147,6 +178,7 @@ interface mainLayoutRouteRouteChildren {
 
 const mainLayoutRouteRouteChildren: mainLayoutRouteRouteChildren = {
   mainLayoutAboutUsRoute: mainLayoutAboutUsRoute,
+  mainLayoutvaluesQualityPolicyRoute: mainLayoutvaluesQualityPolicyRoute,
   mainLayoutvaluesSustainabillityRoute: mainLayoutvaluesSustainabillityRoute,
   mainLayoutFruitsIndexRoute: mainLayoutFruitsIndexRoute,
   mainLayoutVegetablesIndexRoute: mainLayoutVegetablesIndexRoute,
