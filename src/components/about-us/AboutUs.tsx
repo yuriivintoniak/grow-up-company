@@ -3,9 +3,11 @@ import aboutUs from "@/assets/main-layout/about-us.png";
 
 export default function AboutUs() {
   return (
-    <div className={styles.container}>
+    <section className={styles.aboutUsSection}>
       <div className={styles.textBlock}>
-        <h2 className={styles.title}>About us</h2>
+        <h2 className={styles.title}>
+          About us
+        </h2>
         <p className={styles.description}>
           At Pokrovske Tarim, we take pride in cultivating
           <br />
@@ -23,6 +25,6 @@ export default function AboutUs() {
       <div className={styles.imageContainer}>
         <img src={aboutUs} alt="About us" />
       </div>
-    </div>
+    </section>
   );
 }
