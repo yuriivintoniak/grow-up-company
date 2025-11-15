@@ -9,7 +9,7 @@ export const Route = createFileRoute("/(main-layout)")({
       <div className="min-h-screen flex flex-col relative">
         <TopBanner />
         <SubHeader />
-        <main className="px-36 py-20">
+        <main className="px-36 py-28">
           <Outlet />
         </main>
         <Footer />

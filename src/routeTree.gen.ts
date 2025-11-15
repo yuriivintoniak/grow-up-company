@@ -13,6 +13,7 @@ import { Route as mainLayoutRouteRouteImport } from './routes/(main-layout)/rout
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as mainLayoutAboutUsRouteImport } from './routes/(main-layout)/about-us'
 import { Route as mainLayoutVegetablesIndexRouteImport } from './routes/(main-layout)/vegetables/index'
+import { Route as mainLayoutFruitsIndexRouteImport } from './routes/(main-layout)/fruits/index'
 
 const mainLayoutRouteRoute = mainLayoutRouteRouteImport.update({
   id: '/(main-layout)',
@@ -34,15 +35,22 @@ const mainLayoutVegetablesIndexRoute =
     path: '/vegetables/',
     getParentRoute: () => mainLayoutRouteRoute,
   } as any)
+const mainLayoutFruitsIndexRoute = mainLayoutFruitsIndexRouteImport.update({
+  id: '/fruits/',
+  path: '/fruits/',
+  getParentRoute: () => mainLayoutRouteRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about-us': typeof mainLayoutAboutUsRoute
+  '/fruits': typeof mainLayoutFruitsIndexRoute
   '/vegetables': typeof mainLayoutVegetablesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about-us': typeof mainLayoutAboutUsRoute
+  '/fruits': typeof mainLayoutFruitsIndexRoute
   '/vegetables': typeof mainLayoutVegetablesIndexRoute
 }
 export interface FileRoutesById {
@@ -50,18 +58,20 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/(main-layout)': typeof mainLayoutRouteRouteWithChildren
   '/(main-layout)/about-us': typeof mainLayoutAboutUsRoute
+  '/(main-layout)/fruits/': typeof mainLayoutFruitsIndexRoute
   '/(main-layout)/vegetables/': typeof mainLayoutVegetablesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about-us' | '/vegetables'
+  fullPaths: '/' | '/about-us' | '/fruits' | '/vegetables'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about-us' | '/vegetables'
+  to: '/' | '/about-us' | '/fruits' | '/vegetables'
   id:
     | '__root__'
     | '/'
     | '/(main-layout)'
     | '/(main-layout)/about-us'
+    | '/(main-layout)/fruits/'
     | '/(main-layout)/vegetables/'
   fileRoutesById: FileRoutesById
 }
@@ -100,16 +110,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof mainLayoutVegetablesIndexRouteImport
       parentRoute: typeof mainLayoutRouteRoute
     }
+    '/(main-layout)/fruits/': {
+      id: '/(main-layout)/fruits/'
+      path: '/fruits'
+      fullPath: '/fruits'
+      preLoaderRoute: typeof mainLayoutFruitsIndexRouteImport
+      parentRoute: typeof mainLayoutRouteRoute
+    }
   }
 }
 
 interface mainLayoutRouteRouteChildren {
   mainLayoutAboutUsRoute: typeof mainLayoutAboutUsRoute
+  mainLayoutFruitsIndexRoute: typeof mainLayoutFruitsIndexRoute
   mainLayoutVegetablesIndexRoute: typeof mainLayoutVegetablesIndexRoute
 }
 
 const mainLayoutRouteRouteChildren: mainLayoutRouteRouteChildren = {
   mainLayoutAboutUsRoute: mainLayoutAboutUsRoute,
+  mainLayoutFruitsIndexRoute: mainLayoutFruitsIndexRoute,
   mainLayoutVegetablesIndexRoute: mainLayoutVegetablesIndexRoute,
 }
 
