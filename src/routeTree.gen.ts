@@ -14,6 +14,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as mainLayoutAboutUsRouteImport } from './routes/(main-layout)/about-us'
 import { Route as mainLayoutVegetablesIndexRouteImport } from './routes/(main-layout)/vegetables/index'
 import { Route as mainLayoutFruitsIndexRouteImport } from './routes/(main-layout)/fruits/index'
+import { Route as mainLayoutvaluesSustainabillityRouteImport } from './routes/(main-layout)/(values)/sustainabillity'
 
 const mainLayoutRouteRoute = mainLayoutRouteRouteImport.update({
   id: '/(main-layout)',
@@ -40,16 +41,24 @@ const mainLayoutFruitsIndexRoute = mainLayoutFruitsIndexRouteImport.update({
   path: '/fruits/',
   getParentRoute: () => mainLayoutRouteRoute,
 } as any)
+const mainLayoutvaluesSustainabillityRoute =
+  mainLayoutvaluesSustainabillityRouteImport.update({
+    id: '/(values)/sustainabillity',
+    path: '/sustainabillity',
+    getParentRoute: () => mainLayoutRouteRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about-us': typeof mainLayoutAboutUsRoute
+  '/sustainabillity': typeof mainLayoutvaluesSustainabillityRoute
   '/fruits': typeof mainLayoutFruitsIndexRoute
   '/vegetables': typeof mainLayoutVegetablesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about-us': typeof mainLayoutAboutUsRoute
+  '/sustainabillity': typeof mainLayoutvaluesSustainabillityRoute
   '/fruits': typeof mainLayoutFruitsIndexRoute
   '/vegetables': typeof mainLayoutVegetablesIndexRoute
 }
@@ -58,19 +67,21 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/(main-layout)': typeof mainLayoutRouteRouteWithChildren
   '/(main-layout)/about-us': typeof mainLayoutAboutUsRoute
+  '/(main-layout)/(values)/sustainabillity': typeof mainLayoutvaluesSustainabillityRoute
   '/(main-layout)/fruits/': typeof mainLayoutFruitsIndexRoute
   '/(main-layout)/vegetables/': typeof mainLayoutVegetablesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about-us' | '/fruits' | '/vegetables'
+  fullPaths: '/' | '/about-us' | '/sustainabillity' | '/fruits' | '/vegetables'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about-us' | '/fruits' | '/vegetables'
+  to: '/' | '/about-us' | '/sustainabillity' | '/fruits' | '/vegetables'
   id:
     | '__root__'
     | '/'
     | '/(main-layout)'
     | '/(main-layout)/about-us'
+    | '/(main-layout)/(values)/sustainabillity'
     | '/(main-layout)/fruits/'
     | '/(main-layout)/vegetables/'
   fileRoutesById: FileRoutesById
@@ -117,17 +128,26 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof mainLayoutFruitsIndexRouteImport
       parentRoute: typeof mainLayoutRouteRoute
     }
+    '/(main-layout)/(values)/sustainabillity': {
+      id: '/(main-layout)/(values)/sustainabillity'
+      path: '/sustainabillity'
+      fullPath: '/sustainabillity'
+      preLoaderRoute: typeof mainLayoutvaluesSustainabillityRouteImport
+      parentRoute: typeof mainLayoutRouteRoute
+    }
   }
 }
 
 interface mainLayoutRouteRouteChildren {
   mainLayoutAboutUsRoute: typeof mainLayoutAboutUsRoute
+  mainLayoutvaluesSustainabillityRoute: typeof mainLayoutvaluesSustainabillityRoute
   mainLayoutFruitsIndexRoute: typeof mainLayoutFruitsIndexRoute
   mainLayoutVegetablesIndexRoute: typeof mainLayoutVegetablesIndexRoute
 }
 
 const mainLayoutRouteRouteChildren: mainLayoutRouteRouteChildren = {
   mainLayoutAboutUsRoute: mainLayoutAboutUsRoute,
+  mainLayoutvaluesSustainabillityRoute: mainLayoutvaluesSustainabillityRoute,
   mainLayoutFruitsIndexRoute: mainLayoutFruitsIndexRoute,
   mainLayoutVegetablesIndexRoute: mainLayoutVegetablesIndexRoute,
 }
