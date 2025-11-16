@@ -1,6 +1,5 @@
 .visionMissionSection {
   display: flex;
-  /* change to flex-end */
   align-items: center;
   justify-content: space-between;
 }
@@ -16,18 +15,14 @@
   color: #000;
   font-size: 6rem;
   font-weight: 600;
-  font-style: normal;
-  line-height: 1;
-  letter-spacing: 0%;
+  line-height: 1.25;
 }
 
 .description {
   color: #000;
   font-size: 2rem;
   font-weight: 500;
-  font-style: normal;
-  line-height: 1;
-  letter-spacing: 0%;
+  line-height: 1.25;
 }
 
 .imageContainer {

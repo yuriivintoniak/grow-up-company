@@ -10,13 +10,9 @@ export default function QualityPolicy() {
         </h2>
         <p className={styles.description}>
           Quality is the foundation of everything we do.
-          <br />
           From careful selection of seeds to modern storage
-          <br />
-          and delivery.Every step is monitored
-          <br />
+          and delivery. Every step is monitored
           to guarantee freshness, safety, and premium taste
-          <br />
           that meet international standards.
         </p>
       </div>

@@ -10,15 +10,10 @@ export default function AboutUs() {
         </h2>
         <p className={styles.description}>
           At Pokrovske Tarim, we take pride in cultivating
-          <br />
           the finest produce through dedication, innovation
-          <br />
           and care for nature. Our team works
-          <br />
           daily to bring healthy, fresh, and flavorful
-          <br />
           fruits and vegetables straight from
-          <br />
           the field to your table.
         </p>
       </div>

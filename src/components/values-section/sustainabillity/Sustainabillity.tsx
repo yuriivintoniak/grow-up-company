@@ -6,17 +6,13 @@ export default function Sustainabillity() {
     <section className={styles.sustainabillitySection}>
       <div className={styles.textBlock}>
         <h2 className={styles.title}>
-        Sustainabillity
+          Sustainabillity
         </h2>
         <p className={styles.description}>
           We believe in harmony between business
-          <br />
           and nature. By using eco-friendly technologies
-          <br />
           reducing waste and supporting local
-          <br />
           communities we ensure our growth contributes
-          <br />
           to a greener and healthier tomorrow.
         </p>
       </div>

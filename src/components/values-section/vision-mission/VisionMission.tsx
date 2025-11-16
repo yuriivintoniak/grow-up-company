@@ -10,13 +10,9 @@ export default function VisionMission() {
         </h2>
         <p className={styles.description}>
           Our mission is to grow a sustainable future through
-          <br />
           responsible farming and strong partnerships.
-          <br />
           We aim to be a trusted global supplier
-          <br />
           known for quality, transparency, and respect
-          <br />
           for both people and the planet.
         </p>
       </div>
