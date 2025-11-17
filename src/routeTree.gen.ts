@@ -13,6 +13,7 @@ import { Route as mainLayoutRouteRouteImport } from './routes/(main-layout)/rout
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as mainLayoutAboutUsRouteImport } from './routes/(main-layout)/about-us'
 import { Route as mainLayoutVegetablesRouteRouteImport } from './routes/(main-layout)/vegetables/route'
+import { Route as mainLayoutFruitsRouteRouteImport } from './routes/(main-layout)/fruits/route'
 import { Route as mainLayoutVegetablesIndexRouteImport } from './routes/(main-layout)/vegetables/index'
 import { Route as mainLayoutFruitsIndexRouteImport } from './routes/(main-layout)/fruits/index'
 import { Route as mainLayoutVegetablesZucchiniRouteImport } from './routes/(main-layout)/vegetables/zucchini'
@@ -20,6 +21,7 @@ import { Route as mainLayoutVegetablesTomatoeRouteImport } from './routes/(main-
 import { Route as mainLayoutVegetablesSquashRouteImport } from './routes/(main-layout)/vegetables/squash'
 import { Route as mainLayoutVegetablesPepperRouteImport } from './routes/(main-layout)/vegetables/pepper'
 import { Route as mainLayoutVegetablesCucumberRouteImport } from './routes/(main-layout)/vegetables/cucumber'
+import { Route as mainLayoutFruitsMandarinRouteImport } from './routes/(main-layout)/fruits/mandarin'
 import { Route as mainLayoutvaluesVisionMissionRouteImport } from './routes/(main-layout)/(values)/vision-mission'
 import { Route as mainLayoutvaluesSustainabillityRouteImport } from './routes/(main-layout)/(values)/sustainabillity'
 import { Route as mainLayoutvaluesQualityPolicyRouteImport } from './routes/(main-layout)/(values)/quality-policy'
@@ -44,6 +46,11 @@ const mainLayoutVegetablesRouteRoute =
     path: '/vegetables',
     getParentRoute: () => mainLayoutRouteRoute,
   } as any)
+const mainLayoutFruitsRouteRoute = mainLayoutFruitsRouteRouteImport.update({
+  id: '/fruits',
+  path: '/fruits',
+  getParentRoute: () => mainLayoutRouteRoute,
+} as any)
 const mainLayoutVegetablesIndexRoute =
   mainLayoutVegetablesIndexRouteImport.update({
     id: '/',
@@ -51,9 +58,9 @@ const mainLayoutVegetablesIndexRoute =
     getParentRoute: () => mainLayoutVegetablesRouteRoute,
   } as any)
 const mainLayoutFruitsIndexRoute = mainLayoutFruitsIndexRouteImport.update({
-  id: '/fruits/',
-  path: '/fruits/',
-  getParentRoute: () => mainLayoutRouteRoute,
+  id: '/',
+  path: '/',
+  getParentRoute: () => mainLayoutFruitsRouteRoute,
 } as any)
 const mainLayoutVegetablesZucchiniRoute =
   mainLayoutVegetablesZucchiniRouteImport.update({
@@ -85,6 +92,12 @@ const mainLayoutVegetablesCucumberRoute =
     path: '/cucumber',
     getParentRoute: () => mainLayoutVegetablesRouteRoute,
   } as any)
+const mainLayoutFruitsMandarinRoute =
+  mainLayoutFruitsMandarinRouteImport.update({
+    id: '/mandarin',
+    path: '/mandarin',
+    getParentRoute: () => mainLayoutFruitsRouteRoute,
+  } as any)
 const mainLayoutvaluesVisionMissionRoute =
   mainLayoutvaluesVisionMissionRouteImport.update({
     id: '/(values)/vision-mission',
@@ -106,17 +119,19 @@ const mainLayoutvaluesQualityPolicyRoute =
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/fruits': typeof mainLayoutFruitsRouteRouteWithChildren
   '/vegetables': typeof mainLayoutVegetablesRouteRouteWithChildren
   '/about-us': typeof mainLayoutAboutUsRoute
   '/quality-policy': typeof mainLayoutvaluesQualityPolicyRoute
   '/sustainabillity': typeof mainLayoutvaluesSustainabillityRoute
   '/vision-mission': typeof mainLayoutvaluesVisionMissionRoute
+  '/fruits/mandarin': typeof mainLayoutFruitsMandarinRoute
   '/vegetables/cucumber': typeof mainLayoutVegetablesCucumberRoute
   '/vegetables/pepper': typeof mainLayoutVegetablesPepperRoute
   '/vegetables/squash': typeof mainLayoutVegetablesSquashRoute
   '/vegetables/tomatoe': typeof mainLayoutVegetablesTomatoeRoute
   '/vegetables/zucchini': typeof mainLayoutVegetablesZucchiniRoute
-  '/fruits': typeof mainLayoutFruitsIndexRoute
+  '/fruits/': typeof mainLayoutFruitsIndexRoute
   '/vegetables/': typeof mainLayoutVegetablesIndexRoute
 }
 export interface FileRoutesByTo {
@@ -125,6 +140,7 @@ export interface FileRoutesByTo {
   '/quality-policy': typeof mainLayoutvaluesQualityPolicyRoute
   '/sustainabillity': typeof mainLayoutvaluesSustainabillityRoute
   '/vision-mission': typeof mainLayoutvaluesVisionMissionRoute
+  '/fruits/mandarin': typeof mainLayoutFruitsMandarinRoute
   '/vegetables/cucumber': typeof mainLayoutVegetablesCucumberRoute
   '/vegetables/pepper': typeof mainLayoutVegetablesPepperRoute
   '/vegetables/squash': typeof mainLayoutVegetablesSquashRoute
@@ -137,11 +153,13 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/(main-layout)': typeof mainLayoutRouteRouteWithChildren
+  '/(main-layout)/fruits': typeof mainLayoutFruitsRouteRouteWithChildren
   '/(main-layout)/vegetables': typeof mainLayoutVegetablesRouteRouteWithChildren
   '/(main-layout)/about-us': typeof mainLayoutAboutUsRoute
   '/(main-layout)/(values)/quality-policy': typeof mainLayoutvaluesQualityPolicyRoute
   '/(main-layout)/(values)/sustainabillity': typeof mainLayoutvaluesSustainabillityRoute
   '/(main-layout)/(values)/vision-mission': typeof mainLayoutvaluesVisionMissionRoute
+  '/(main-layout)/fruits/mandarin': typeof mainLayoutFruitsMandarinRoute
   '/(main-layout)/vegetables/cucumber': typeof mainLayoutVegetablesCucumberRoute
   '/(main-layout)/vegetables/pepper': typeof mainLayoutVegetablesPepperRoute
   '/(main-layout)/vegetables/squash': typeof mainLayoutVegetablesSquashRoute
@@ -154,17 +172,19 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/fruits'
     | '/vegetables'
     | '/about-us'
     | '/quality-policy'
     | '/sustainabillity'
     | '/vision-mission'
+    | '/fruits/mandarin'
     | '/vegetables/cucumber'
     | '/vegetables/pepper'
     | '/vegetables/squash'
     | '/vegetables/tomatoe'
     | '/vegetables/zucchini'
-    | '/fruits'
+    | '/fruits/'
     | '/vegetables/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -173,6 +193,7 @@ export interface FileRouteTypes {
     | '/quality-policy'
     | '/sustainabillity'
     | '/vision-mission'
+    | '/fruits/mandarin'
     | '/vegetables/cucumber'
     | '/vegetables/pepper'
     | '/vegetables/squash'
@@ -184,11 +205,13 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/(main-layout)'
+    | '/(main-layout)/fruits'
     | '/(main-layout)/vegetables'
     | '/(main-layout)/about-us'
     | '/(main-layout)/(values)/quality-policy'
     | '/(main-layout)/(values)/sustainabillity'
     | '/(main-layout)/(values)/vision-mission'
+    | '/(main-layout)/fruits/mandarin'
     | '/(main-layout)/vegetables/cucumber'
     | '/(main-layout)/vegetables/pepper'
     | '/(main-layout)/vegetables/squash'
@@ -233,6 +256,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof mainLayoutVegetablesRouteRouteImport
       parentRoute: typeof mainLayoutRouteRoute
     }
+    '/(main-layout)/fruits': {
+      id: '/(main-layout)/fruits'
+      path: '/fruits'
+      fullPath: '/fruits'
+      preLoaderRoute: typeof mainLayoutFruitsRouteRouteImport
+      parentRoute: typeof mainLayoutRouteRoute
+    }
     '/(main-layout)/vegetables/': {
       id: '/(main-layout)/vegetables/'
       path: '/'
@@ -242,10 +272,10 @@ declare module '@tanstack/react-router' {
     }
     '/(main-layout)/fruits/': {
       id: '/(main-layout)/fruits/'
-      path: '/fruits'
-      fullPath: '/fruits'
+      path: '/'
+      fullPath: '/fruits/'
       preLoaderRoute: typeof mainLayoutFruitsIndexRouteImport
-      parentRoute: typeof mainLayoutRouteRoute
+      parentRoute: typeof mainLayoutFruitsRouteRoute
     }
     '/(main-layout)/vegetables/zucchini': {
       id: '/(main-layout)/vegetables/zucchini'
@@ -282,6 +312,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof mainLayoutVegetablesCucumberRouteImport
       parentRoute: typeof mainLayoutVegetablesRouteRoute
     }
+    '/(main-layout)/fruits/mandarin': {
+      id: '/(main-layout)/fruits/mandarin'
+      path: '/mandarin'
+      fullPath: '/fruits/mandarin'
+      preLoaderRoute: typeof mainLayoutFruitsMandarinRouteImport
+      parentRoute: typeof mainLayoutFruitsRouteRoute
+    }
     '/(main-layout)/(values)/vision-mission': {
       id: '/(main-layout)/(values)/vision-mission'
       path: '/vision-mission'
@@ -305,6 +342,21 @@ declare module '@tanstack/react-router' {
     }
   }
 }
+
+interface mainLayoutFruitsRouteRouteChildren {
+  mainLayoutFruitsMandarinRoute: typeof mainLayoutFruitsMandarinRoute
+  mainLayoutFruitsIndexRoute: typeof mainLayoutFruitsIndexRoute
+}
+
+const mainLayoutFruitsRouteRouteChildren: mainLayoutFruitsRouteRouteChildren = {
+  mainLayoutFruitsMandarinRoute: mainLayoutFruitsMandarinRoute,
+  mainLayoutFruitsIndexRoute: mainLayoutFruitsIndexRoute,
+}
+
+const mainLayoutFruitsRouteRouteWithChildren =
+  mainLayoutFruitsRouteRoute._addFileChildren(
+    mainLayoutFruitsRouteRouteChildren,
+  )
 
 interface mainLayoutVegetablesRouteRouteChildren {
   mainLayoutVegetablesCucumberRoute: typeof mainLayoutVegetablesCucumberRoute
@@ -331,21 +383,21 @@ const mainLayoutVegetablesRouteRouteWithChildren =
   )
 
 interface mainLayoutRouteRouteChildren {
+  mainLayoutFruitsRouteRoute: typeof mainLayoutFruitsRouteRouteWithChildren
   mainLayoutVegetablesRouteRoute: typeof mainLayoutVegetablesRouteRouteWithChildren
   mainLayoutAboutUsRoute: typeof mainLayoutAboutUsRoute
   mainLayoutvaluesQualityPolicyRoute: typeof mainLayoutvaluesQualityPolicyRoute
   mainLayoutvaluesSustainabillityRoute: typeof mainLayoutvaluesSustainabillityRoute
   mainLayoutvaluesVisionMissionRoute: typeof mainLayoutvaluesVisionMissionRoute
-  mainLayoutFruitsIndexRoute: typeof mainLayoutFruitsIndexRoute
 }
 
 const mainLayoutRouteRouteChildren: mainLayoutRouteRouteChildren = {
+  mainLayoutFruitsRouteRoute: mainLayoutFruitsRouteRouteWithChildren,
   mainLayoutVegetablesRouteRoute: mainLayoutVegetablesRouteRouteWithChildren,
   mainLayoutAboutUsRoute: mainLayoutAboutUsRoute,
   mainLayoutvaluesQualityPolicyRoute: mainLayoutvaluesQualityPolicyRoute,
   mainLayoutvaluesSustainabillityRoute: mainLayoutvaluesSustainabillityRoute,
   mainLayoutvaluesVisionMissionRoute: mainLayoutvaluesVisionMissionRoute,
-  mainLayoutFruitsIndexRoute: mainLayoutFruitsIndexRoute,
 }
 
 const mainLayoutRouteRouteWithChildren = mainLayoutRouteRoute._addFileChildren(
