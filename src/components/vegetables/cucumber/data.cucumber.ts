@@ -6,7 +6,7 @@ import cucumberSmall2 from "@/assets/main-layout/vegetables/cucumber/small/2-cuc
 import cucumberSmall3 from "@/assets/main-layout/vegetables/cucumber/small/3-cucumber-small.png";
 import cucumberSmall4 from "@/assets/main-layout/vegetables/cucumber/small/4-cucumber-small.png";
 
-export type CucumberImages = { 
+export type CucumberImages = {
   large: Record<number, string>; 
   small: Record<number, string>; 
 };

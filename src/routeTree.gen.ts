@@ -15,6 +15,7 @@ import { Route as mainLayoutAboutUsRouteImport } from './routes/(main-layout)/ab
 import { Route as mainLayoutVegetablesRouteRouteImport } from './routes/(main-layout)/vegetables/route'
 import { Route as mainLayoutVegetablesIndexRouteImport } from './routes/(main-layout)/vegetables/index'
 import { Route as mainLayoutFruitsIndexRouteImport } from './routes/(main-layout)/fruits/index'
+import { Route as mainLayoutVegetablesTomatoeRouteImport } from './routes/(main-layout)/vegetables/tomatoe'
 import { Route as mainLayoutVegetablesCucumberRouteImport } from './routes/(main-layout)/vegetables/cucumber'
 import { Route as mainLayoutvaluesVisionMissionRouteImport } from './routes/(main-layout)/(values)/vision-mission'
 import { Route as mainLayoutvaluesSustainabillityRouteImport } from './routes/(main-layout)/(values)/sustainabillity'
@@ -51,6 +52,12 @@ const mainLayoutFruitsIndexRoute = mainLayoutFruitsIndexRouteImport.update({
   path: '/fruits/',
   getParentRoute: () => mainLayoutRouteRoute,
 } as any)
+const mainLayoutVegetablesTomatoeRoute =
+  mainLayoutVegetablesTomatoeRouteImport.update({
+    id: '/tomatoe',
+    path: '/tomatoe',
+    getParentRoute: () => mainLayoutVegetablesRouteRoute,
+  } as any)
 const mainLayoutVegetablesCucumberRoute =
   mainLayoutVegetablesCucumberRouteImport.update({
     id: '/cucumber',
@@ -84,6 +91,7 @@ export interface FileRoutesByFullPath {
   '/sustainabillity': typeof mainLayoutvaluesSustainabillityRoute
   '/vision-mission': typeof mainLayoutvaluesVisionMissionRoute
   '/vegetables/cucumber': typeof mainLayoutVegetablesCucumberRoute
+  '/vegetables/tomatoe': typeof mainLayoutVegetablesTomatoeRoute
   '/fruits': typeof mainLayoutFruitsIndexRoute
   '/vegetables/': typeof mainLayoutVegetablesIndexRoute
 }
@@ -94,6 +102,7 @@ export interface FileRoutesByTo {
   '/sustainabillity': typeof mainLayoutvaluesSustainabillityRoute
   '/vision-mission': typeof mainLayoutvaluesVisionMissionRoute
   '/vegetables/cucumber': typeof mainLayoutVegetablesCucumberRoute
+  '/vegetables/tomatoe': typeof mainLayoutVegetablesTomatoeRoute
   '/fruits': typeof mainLayoutFruitsIndexRoute
   '/vegetables': typeof mainLayoutVegetablesIndexRoute
 }
@@ -107,6 +116,7 @@ export interface FileRoutesById {
   '/(main-layout)/(values)/sustainabillity': typeof mainLayoutvaluesSustainabillityRoute
   '/(main-layout)/(values)/vision-mission': typeof mainLayoutvaluesVisionMissionRoute
   '/(main-layout)/vegetables/cucumber': typeof mainLayoutVegetablesCucumberRoute
+  '/(main-layout)/vegetables/tomatoe': typeof mainLayoutVegetablesTomatoeRoute
   '/(main-layout)/fruits/': typeof mainLayoutFruitsIndexRoute
   '/(main-layout)/vegetables/': typeof mainLayoutVegetablesIndexRoute
 }
@@ -120,6 +130,7 @@ export interface FileRouteTypes {
     | '/sustainabillity'
     | '/vision-mission'
     | '/vegetables/cucumber'
+    | '/vegetables/tomatoe'
     | '/fruits'
     | '/vegetables/'
   fileRoutesByTo: FileRoutesByTo
@@ -130,6 +141,7 @@ export interface FileRouteTypes {
     | '/sustainabillity'
     | '/vision-mission'
     | '/vegetables/cucumber'
+    | '/vegetables/tomatoe'
     | '/fruits'
     | '/vegetables'
   id:
@@ -142,6 +154,7 @@ export interface FileRouteTypes {
     | '/(main-layout)/(values)/sustainabillity'
     | '/(main-layout)/(values)/vision-mission'
     | '/(main-layout)/vegetables/cucumber'
+    | '/(main-layout)/vegetables/tomatoe'
     | '/(main-layout)/fruits/'
     | '/(main-layout)/vegetables/'
   fileRoutesById: FileRoutesById
@@ -195,6 +208,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof mainLayoutFruitsIndexRouteImport
       parentRoute: typeof mainLayoutRouteRoute
     }
+    '/(main-layout)/vegetables/tomatoe': {
+      id: '/(main-layout)/vegetables/tomatoe'
+      path: '/tomatoe'
+      fullPath: '/vegetables/tomatoe'
+      preLoaderRoute: typeof mainLayoutVegetablesTomatoeRouteImport
+      parentRoute: typeof mainLayoutVegetablesRouteRoute
+    }
     '/(main-layout)/vegetables/cucumber': {
       id: '/(main-layout)/vegetables/cucumber'
       path: '/cucumber'
@@ -228,12 +248,14 @@ declare module '@tanstack/react-router' {
 
 interface mainLayoutVegetablesRouteRouteChildren {
   mainLayoutVegetablesCucumberRoute: typeof mainLayoutVegetablesCucumberRoute
+  mainLayoutVegetablesTomatoeRoute: typeof mainLayoutVegetablesTomatoeRoute
   mainLayoutVegetablesIndexRoute: typeof mainLayoutVegetablesIndexRoute
 }
 
 const mainLayoutVegetablesRouteRouteChildren: mainLayoutVegetablesRouteRouteChildren =
   {
     mainLayoutVegetablesCucumberRoute: mainLayoutVegetablesCucumberRoute,
+    mainLayoutVegetablesTomatoeRoute: mainLayoutVegetablesTomatoeRoute,
     mainLayoutVegetablesIndexRoute: mainLayoutVegetablesIndexRoute,
   }
 
