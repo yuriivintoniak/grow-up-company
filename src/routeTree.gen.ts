@@ -22,6 +22,7 @@ import { Route as mainLayoutVegetablesSquashRouteImport } from './routes/(main-l
 import { Route as mainLayoutVegetablesPepperRouteImport } from './routes/(main-layout)/vegetables/pepper'
 import { Route as mainLayoutVegetablesCucumberRouteImport } from './routes/(main-layout)/vegetables/cucumber'
 import { Route as mainLayoutFruitsMandarinRouteImport } from './routes/(main-layout)/fruits/mandarin'
+import { Route as mainLayoutFruitsLemonRouteImport } from './routes/(main-layout)/fruits/lemon'
 import { Route as mainLayoutvaluesVisionMissionRouteImport } from './routes/(main-layout)/(values)/vision-mission'
 import { Route as mainLayoutvaluesSustainabillityRouteImport } from './routes/(main-layout)/(values)/sustainabillity'
 import { Route as mainLayoutvaluesQualityPolicyRouteImport } from './routes/(main-layout)/(values)/quality-policy'
@@ -98,6 +99,11 @@ const mainLayoutFruitsMandarinRoute =
     path: '/mandarin',
     getParentRoute: () => mainLayoutFruitsRouteRoute,
   } as any)
+const mainLayoutFruitsLemonRoute = mainLayoutFruitsLemonRouteImport.update({
+  id: '/lemon',
+  path: '/lemon',
+  getParentRoute: () => mainLayoutFruitsRouteRoute,
+} as any)
 const mainLayoutvaluesVisionMissionRoute =
   mainLayoutvaluesVisionMissionRouteImport.update({
     id: '/(values)/vision-mission',
@@ -125,6 +131,7 @@ export interface FileRoutesByFullPath {
   '/quality-policy': typeof mainLayoutvaluesQualityPolicyRoute
   '/sustainabillity': typeof mainLayoutvaluesSustainabillityRoute
   '/vision-mission': typeof mainLayoutvaluesVisionMissionRoute
+  '/fruits/lemon': typeof mainLayoutFruitsLemonRoute
   '/fruits/mandarin': typeof mainLayoutFruitsMandarinRoute
   '/vegetables/cucumber': typeof mainLayoutVegetablesCucumberRoute
   '/vegetables/pepper': typeof mainLayoutVegetablesPepperRoute
@@ -140,6 +147,7 @@ export interface FileRoutesByTo {
   '/quality-policy': typeof mainLayoutvaluesQualityPolicyRoute
   '/sustainabillity': typeof mainLayoutvaluesSustainabillityRoute
   '/vision-mission': typeof mainLayoutvaluesVisionMissionRoute
+  '/fruits/lemon': typeof mainLayoutFruitsLemonRoute
   '/fruits/mandarin': typeof mainLayoutFruitsMandarinRoute
   '/vegetables/cucumber': typeof mainLayoutVegetablesCucumberRoute
   '/vegetables/pepper': typeof mainLayoutVegetablesPepperRoute
@@ -159,6 +167,7 @@ export interface FileRoutesById {
   '/(main-layout)/(values)/quality-policy': typeof mainLayoutvaluesQualityPolicyRoute
   '/(main-layout)/(values)/sustainabillity': typeof mainLayoutvaluesSustainabillityRoute
   '/(main-layout)/(values)/vision-mission': typeof mainLayoutvaluesVisionMissionRoute
+  '/(main-layout)/fruits/lemon': typeof mainLayoutFruitsLemonRoute
   '/(main-layout)/fruits/mandarin': typeof mainLayoutFruitsMandarinRoute
   '/(main-layout)/vegetables/cucumber': typeof mainLayoutVegetablesCucumberRoute
   '/(main-layout)/vegetables/pepper': typeof mainLayoutVegetablesPepperRoute
@@ -178,6 +187,7 @@ export interface FileRouteTypes {
     | '/quality-policy'
     | '/sustainabillity'
     | '/vision-mission'
+    | '/fruits/lemon'
     | '/fruits/mandarin'
     | '/vegetables/cucumber'
     | '/vegetables/pepper'
@@ -193,6 +203,7 @@ export interface FileRouteTypes {
     | '/quality-policy'
     | '/sustainabillity'
     | '/vision-mission'
+    | '/fruits/lemon'
     | '/fruits/mandarin'
     | '/vegetables/cucumber'
     | '/vegetables/pepper'
@@ -211,6 +222,7 @@ export interface FileRouteTypes {
     | '/(main-layout)/(values)/quality-policy'
     | '/(main-layout)/(values)/sustainabillity'
     | '/(main-layout)/(values)/vision-mission'
+    | '/(main-layout)/fruits/lemon'
     | '/(main-layout)/fruits/mandarin'
     | '/(main-layout)/vegetables/cucumber'
     | '/(main-layout)/vegetables/pepper'
@@ -319,6 +331,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof mainLayoutFruitsMandarinRouteImport
       parentRoute: typeof mainLayoutFruitsRouteRoute
     }
+    '/(main-layout)/fruits/lemon': {
+      id: '/(main-layout)/fruits/lemon'
+      path: '/lemon'
+      fullPath: '/fruits/lemon'
+      preLoaderRoute: typeof mainLayoutFruitsLemonRouteImport
+      parentRoute: typeof mainLayoutFruitsRouteRoute
+    }
     '/(main-layout)/(values)/vision-mission': {
       id: '/(main-layout)/(values)/vision-mission'
       path: '/vision-mission'
@@ -344,11 +363,13 @@ declare module '@tanstack/react-router' {
 }
 
 interface mainLayoutFruitsRouteRouteChildren {
+  mainLayoutFruitsLemonRoute: typeof mainLayoutFruitsLemonRoute
   mainLayoutFruitsMandarinRoute: typeof mainLayoutFruitsMandarinRoute
   mainLayoutFruitsIndexRoute: typeof mainLayoutFruitsIndexRoute
 }
 
 const mainLayoutFruitsRouteRouteChildren: mainLayoutFruitsRouteRouteChildren = {
+  mainLayoutFruitsLemonRoute: mainLayoutFruitsLemonRoute,
   mainLayoutFruitsMandarinRoute: mainLayoutFruitsMandarinRoute,
   mainLayoutFruitsIndexRoute: mainLayoutFruitsIndexRoute,
 }
