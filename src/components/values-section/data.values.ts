@@ -1,6 +1,6 @@
-import qualityPolicy from "@/assets/values/photo-quality.png";
-import visionMission from "@/assets/values/photo-vision.png";
-import sustainability from "@/assets/values/photo-sus.png";
+import qualityPolicy from "@/assets/values-section/photo-quality.png";
+import visionMission from "@/assets/values-section/photo-vision.png";
+import sustainability from "@/assets/values-section/photo-sus.png";
 
 type ValuesDataItem = {
   id: number;

@@ -45,6 +45,7 @@ export const footerMenuItems: FooterMenuItem[] = [
     href: "#contacts",
     options: [
       { label: "+90 534 29 29 764", href: "#phone" },
+      { label: "+90 545 78 59 035", href: "#phone" },
       { label: "freshveggies.info@gmail.com", href: "#email" },
     ],
   },

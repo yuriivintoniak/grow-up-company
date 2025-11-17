@@ -1,0 +1,65 @@
+.zucchiniSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.textBlock {
+  display: flex;
+  gap: 2.2rem;
+  flex-direction: column;
+}
+
+.title {
+  color: #000;
+  font-size: 6rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.subtitle {
+  color: #000;
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.productInformation {
+  color: #000;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.25;
+  display: flex;
+  gap: 0.2rem;
+  flex-direction: column;
+}
+
+.imageContainer {
+  display: grid;
+  gap: 2.5rem;
+  grid-template-columns: 420px 120px;
+}
+
+.largeImage {
+  width: 100%;
+  height: auto;
+}
+
+.smallImages {
+  cursor: pointer;
+  display: grid;
+  gap: 1.875rem;
+  grid-template-rows: repeat(3, 120px);
+}
+
+.smallImages img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.smallImageFromLarge {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}

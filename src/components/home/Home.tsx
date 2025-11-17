@@ -10,7 +10,7 @@ export default function Home() {
       <div className={styles.heroSection}>
         <Header />
         <h1 className={styles.heroTitle}>
-          The freshest from{"\n"}nature perfectly{"\n"}prepared and delivered{"\n"}to you
+          The freshest from nature perfectly prepared and delivered to you
         </h1>
         <button className={styles.heroButton}>
           About us

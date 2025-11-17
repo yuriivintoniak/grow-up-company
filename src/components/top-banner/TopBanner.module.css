@@ -1,0 +1,12 @@
+.topBannerContainer {
+  width: 100%;
+  overflow: hidden;
+}
+
+.topBanner {
+  width: 100%;
+  filter: brightness(0.8);
+  display: block;  
+  object-fit: cover;
+  object-position: center;
+}
