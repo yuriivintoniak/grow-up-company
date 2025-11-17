@@ -1,10 +1,16 @@
+import { useState } from "react";
 import styles from "./Cucumber.module.css";
-import cucumberLarge1 from "@/assets/main-layout/vegetables/cucumber/large/1-cucumber-large.png";
-import cucumberSmall2 from "@/assets/main-layout/vegetables/cucumber/small/2-cucumber-small.png";
-import cucumberSmall3 from "@/assets/main-layout/vegetables/cucumber/small/3-cucumber-small.png";
-import cucumberSmall4 from "@/assets/main-layout/vegetables/cucumber/small/4-cucumber-small.png";
+import { cucumberImages } from "./data.cucumber";
 
 export default function Cucumber() {
+  const [selectedImage, setSelectedImage] = useState<1 | 2 | 3 | 4>(1);
+
+  const handleImageClick = (imageId: 1 | 2 | 3 | 4) => {
+    setSelectedImage(imageId);
+  };
+
+  const smallImages = ([1, 2, 3, 4] as const).filter(id => id !== selectedImage);
+
   return (
     <section className={styles.cucumberSection}>
       <div className={styles.textBlock}>
@@ -23,11 +29,27 @@ export default function Cucumber() {
         </div>
       </div>
       <div className={styles.imageContainer}>
-        <img src={cucumberLarge1} className={styles.largeImage} alt="Cucumber" />
+        <img 
+          src={cucumberImages.large[selectedImage]} 
+          className={styles.largeImage} 
+          alt="Cucumber" 
+        />
         <div className={styles.smallImages}>
-          <img src={cucumberSmall2} alt="Cucumber" />
-          <img src={cucumberSmall3} alt="Cucumber" />
-          <img src={cucumberSmall4} alt="Cucumber" />
+          {smallImages.map((imageId) => {
+            const imageSrc = cucumberImages.small[imageId as 2 | 3 | 4] 
+              || cucumberImages.large[imageId];
+            const isLargeImageAsSmall = !cucumberImages.small[imageId as 2 | 3 | 4];
+
+            return (
+              <img 
+                key={imageId}
+                src={imageSrc} 
+                alt="Cucumber" 
+                className={isLargeImageAsSmall ? styles.smallImageFromLarge : undefined}
+                onClick={() => handleImageClick(imageId)}
+              />
+            );
+          })}
         </div>
       </div>
     </section>

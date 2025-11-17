@@ -46,6 +46,7 @@
 }
 
 .smallImages {
+  cursor: pointer;
   display: grid;
   gap: 1.875rem;
   grid-template-rows: repeat(3, 120px);
@@ -54,4 +55,11 @@
 .smallImages img {
   width: 100%;
   height: auto;
+  object-fit: contain;
+}
+
+.smallImageFromLarge {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
 }
