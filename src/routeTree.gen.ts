@@ -15,6 +15,7 @@ import { Route as mainLayoutAboutUsRouteImport } from './routes/(main-layout)/ab
 import { Route as mainLayoutVegetablesRouteRouteImport } from './routes/(main-layout)/vegetables/route'
 import { Route as mainLayoutVegetablesIndexRouteImport } from './routes/(main-layout)/vegetables/index'
 import { Route as mainLayoutFruitsIndexRouteImport } from './routes/(main-layout)/fruits/index'
+import { Route as mainLayoutVegetablesZucchiniRouteImport } from './routes/(main-layout)/vegetables/zucchini'
 import { Route as mainLayoutVegetablesTomatoeRouteImport } from './routes/(main-layout)/vegetables/tomatoe'
 import { Route as mainLayoutVegetablesPepperRouteImport } from './routes/(main-layout)/vegetables/pepper'
 import { Route as mainLayoutVegetablesCucumberRouteImport } from './routes/(main-layout)/vegetables/cucumber'
@@ -53,6 +54,12 @@ const mainLayoutFruitsIndexRoute = mainLayoutFruitsIndexRouteImport.update({
   path: '/fruits/',
   getParentRoute: () => mainLayoutRouteRoute,
 } as any)
+const mainLayoutVegetablesZucchiniRoute =
+  mainLayoutVegetablesZucchiniRouteImport.update({
+    id: '/zucchini',
+    path: '/zucchini',
+    getParentRoute: () => mainLayoutVegetablesRouteRoute,
+  } as any)
 const mainLayoutVegetablesTomatoeRoute =
   mainLayoutVegetablesTomatoeRouteImport.update({
     id: '/tomatoe',
@@ -100,6 +107,7 @@ export interface FileRoutesByFullPath {
   '/vegetables/cucumber': typeof mainLayoutVegetablesCucumberRoute
   '/vegetables/pepper': typeof mainLayoutVegetablesPepperRoute
   '/vegetables/tomatoe': typeof mainLayoutVegetablesTomatoeRoute
+  '/vegetables/zucchini': typeof mainLayoutVegetablesZucchiniRoute
   '/fruits': typeof mainLayoutFruitsIndexRoute
   '/vegetables/': typeof mainLayoutVegetablesIndexRoute
 }
@@ -112,6 +120,7 @@ export interface FileRoutesByTo {
   '/vegetables/cucumber': typeof mainLayoutVegetablesCucumberRoute
   '/vegetables/pepper': typeof mainLayoutVegetablesPepperRoute
   '/vegetables/tomatoe': typeof mainLayoutVegetablesTomatoeRoute
+  '/vegetables/zucchini': typeof mainLayoutVegetablesZucchiniRoute
   '/fruits': typeof mainLayoutFruitsIndexRoute
   '/vegetables': typeof mainLayoutVegetablesIndexRoute
 }
@@ -127,6 +136,7 @@ export interface FileRoutesById {
   '/(main-layout)/vegetables/cucumber': typeof mainLayoutVegetablesCucumberRoute
   '/(main-layout)/vegetables/pepper': typeof mainLayoutVegetablesPepperRoute
   '/(main-layout)/vegetables/tomatoe': typeof mainLayoutVegetablesTomatoeRoute
+  '/(main-layout)/vegetables/zucchini': typeof mainLayoutVegetablesZucchiniRoute
   '/(main-layout)/fruits/': typeof mainLayoutFruitsIndexRoute
   '/(main-layout)/vegetables/': typeof mainLayoutVegetablesIndexRoute
 }
@@ -142,6 +152,7 @@ export interface FileRouteTypes {
     | '/vegetables/cucumber'
     | '/vegetables/pepper'
     | '/vegetables/tomatoe'
+    | '/vegetables/zucchini'
     | '/fruits'
     | '/vegetables/'
   fileRoutesByTo: FileRoutesByTo
@@ -154,6 +165,7 @@ export interface FileRouteTypes {
     | '/vegetables/cucumber'
     | '/vegetables/pepper'
     | '/vegetables/tomatoe'
+    | '/vegetables/zucchini'
     | '/fruits'
     | '/vegetables'
   id:
@@ -168,6 +180,7 @@ export interface FileRouteTypes {
     | '/(main-layout)/vegetables/cucumber'
     | '/(main-layout)/vegetables/pepper'
     | '/(main-layout)/vegetables/tomatoe'
+    | '/(main-layout)/vegetables/zucchini'
     | '/(main-layout)/fruits/'
     | '/(main-layout)/vegetables/'
   fileRoutesById: FileRoutesById
@@ -221,6 +234,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof mainLayoutFruitsIndexRouteImport
       parentRoute: typeof mainLayoutRouteRoute
     }
+    '/(main-layout)/vegetables/zucchini': {
+      id: '/(main-layout)/vegetables/zucchini'
+      path: '/zucchini'
+      fullPath: '/vegetables/zucchini'
+      preLoaderRoute: typeof mainLayoutVegetablesZucchiniRouteImport
+      parentRoute: typeof mainLayoutVegetablesRouteRoute
+    }
     '/(main-layout)/vegetables/tomatoe': {
       id: '/(main-layout)/vegetables/tomatoe'
       path: '/tomatoe'
@@ -270,6 +290,7 @@ interface mainLayoutVegetablesRouteRouteChildren {
   mainLayoutVegetablesCucumberRoute: typeof mainLayoutVegetablesCucumberRoute
   mainLayoutVegetablesPepperRoute: typeof mainLayoutVegetablesPepperRoute
   mainLayoutVegetablesTomatoeRoute: typeof mainLayoutVegetablesTomatoeRoute
+  mainLayoutVegetablesZucchiniRoute: typeof mainLayoutVegetablesZucchiniRoute
   mainLayoutVegetablesIndexRoute: typeof mainLayoutVegetablesIndexRoute
 }
 
@@ -278,6 +299,7 @@ const mainLayoutVegetablesRouteRouteChildren: mainLayoutVegetablesRouteRouteChil
     mainLayoutVegetablesCucumberRoute: mainLayoutVegetablesCucumberRoute,
     mainLayoutVegetablesPepperRoute: mainLayoutVegetablesPepperRoute,
     mainLayoutVegetablesTomatoeRoute: mainLayoutVegetablesTomatoeRoute,
+    mainLayoutVegetablesZucchiniRoute: mainLayoutVegetablesZucchiniRoute,
     mainLayoutVegetablesIndexRoute: mainLayoutVegetablesIndexRoute,
   }
 
