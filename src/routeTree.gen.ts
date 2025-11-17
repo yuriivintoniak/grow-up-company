@@ -21,6 +21,7 @@ import { Route as mainLayoutVegetablesTomatoeRouteImport } from './routes/(main-
 import { Route as mainLayoutVegetablesSquashRouteImport } from './routes/(main-layout)/vegetables/squash'
 import { Route as mainLayoutVegetablesPepperRouteImport } from './routes/(main-layout)/vegetables/pepper'
 import { Route as mainLayoutVegetablesCucumberRouteImport } from './routes/(main-layout)/vegetables/cucumber'
+import { Route as mainLayoutFruitsPomegranateRouteImport } from './routes/(main-layout)/fruits/pomegranate'
 import { Route as mainLayoutFruitsMandarinRouteImport } from './routes/(main-layout)/fruits/mandarin'
 import { Route as mainLayoutFruitsLemonRouteImport } from './routes/(main-layout)/fruits/lemon'
 import { Route as mainLayoutvaluesVisionMissionRouteImport } from './routes/(main-layout)/(values)/vision-mission'
@@ -93,6 +94,12 @@ const mainLayoutVegetablesCucumberRoute =
     path: '/cucumber',
     getParentRoute: () => mainLayoutVegetablesRouteRoute,
   } as any)
+const mainLayoutFruitsPomegranateRoute =
+  mainLayoutFruitsPomegranateRouteImport.update({
+    id: '/pomegranate',
+    path: '/pomegranate',
+    getParentRoute: () => mainLayoutFruitsRouteRoute,
+  } as any)
 const mainLayoutFruitsMandarinRoute =
   mainLayoutFruitsMandarinRouteImport.update({
     id: '/mandarin',
@@ -133,6 +140,7 @@ export interface FileRoutesByFullPath {
   '/vision-mission': typeof mainLayoutvaluesVisionMissionRoute
   '/fruits/lemon': typeof mainLayoutFruitsLemonRoute
   '/fruits/mandarin': typeof mainLayoutFruitsMandarinRoute
+  '/fruits/pomegranate': typeof mainLayoutFruitsPomegranateRoute
   '/vegetables/cucumber': typeof mainLayoutVegetablesCucumberRoute
   '/vegetables/pepper': typeof mainLayoutVegetablesPepperRoute
   '/vegetables/squash': typeof mainLayoutVegetablesSquashRoute
@@ -149,6 +157,7 @@ export interface FileRoutesByTo {
   '/vision-mission': typeof mainLayoutvaluesVisionMissionRoute
   '/fruits/lemon': typeof mainLayoutFruitsLemonRoute
   '/fruits/mandarin': typeof mainLayoutFruitsMandarinRoute
+  '/fruits/pomegranate': typeof mainLayoutFruitsPomegranateRoute
   '/vegetables/cucumber': typeof mainLayoutVegetablesCucumberRoute
   '/vegetables/pepper': typeof mainLayoutVegetablesPepperRoute
   '/vegetables/squash': typeof mainLayoutVegetablesSquashRoute
@@ -169,6 +178,7 @@ export interface FileRoutesById {
   '/(main-layout)/(values)/vision-mission': typeof mainLayoutvaluesVisionMissionRoute
   '/(main-layout)/fruits/lemon': typeof mainLayoutFruitsLemonRoute
   '/(main-layout)/fruits/mandarin': typeof mainLayoutFruitsMandarinRoute
+  '/(main-layout)/fruits/pomegranate': typeof mainLayoutFruitsPomegranateRoute
   '/(main-layout)/vegetables/cucumber': typeof mainLayoutVegetablesCucumberRoute
   '/(main-layout)/vegetables/pepper': typeof mainLayoutVegetablesPepperRoute
   '/(main-layout)/vegetables/squash': typeof mainLayoutVegetablesSquashRoute
@@ -189,6 +199,7 @@ export interface FileRouteTypes {
     | '/vision-mission'
     | '/fruits/lemon'
     | '/fruits/mandarin'
+    | '/fruits/pomegranate'
     | '/vegetables/cucumber'
     | '/vegetables/pepper'
     | '/vegetables/squash'
@@ -205,6 +216,7 @@ export interface FileRouteTypes {
     | '/vision-mission'
     | '/fruits/lemon'
     | '/fruits/mandarin'
+    | '/fruits/pomegranate'
     | '/vegetables/cucumber'
     | '/vegetables/pepper'
     | '/vegetables/squash'
@@ -224,6 +236,7 @@ export interface FileRouteTypes {
     | '/(main-layout)/(values)/vision-mission'
     | '/(main-layout)/fruits/lemon'
     | '/(main-layout)/fruits/mandarin'
+    | '/(main-layout)/fruits/pomegranate'
     | '/(main-layout)/vegetables/cucumber'
     | '/(main-layout)/vegetables/pepper'
     | '/(main-layout)/vegetables/squash'
@@ -324,6 +337,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof mainLayoutVegetablesCucumberRouteImport
       parentRoute: typeof mainLayoutVegetablesRouteRoute
     }
+    '/(main-layout)/fruits/pomegranate': {
+      id: '/(main-layout)/fruits/pomegranate'
+      path: '/pomegranate'
+      fullPath: '/fruits/pomegranate'
+      preLoaderRoute: typeof mainLayoutFruitsPomegranateRouteImport
+      parentRoute: typeof mainLayoutFruitsRouteRoute
+    }
     '/(main-layout)/fruits/mandarin': {
       id: '/(main-layout)/fruits/mandarin'
       path: '/mandarin'
@@ -365,12 +385,14 @@ declare module '@tanstack/react-router' {
 interface mainLayoutFruitsRouteRouteChildren {
   mainLayoutFruitsLemonRoute: typeof mainLayoutFruitsLemonRoute
   mainLayoutFruitsMandarinRoute: typeof mainLayoutFruitsMandarinRoute
+  mainLayoutFruitsPomegranateRoute: typeof mainLayoutFruitsPomegranateRoute
   mainLayoutFruitsIndexRoute: typeof mainLayoutFruitsIndexRoute
 }
 
 const mainLayoutFruitsRouteRouteChildren: mainLayoutFruitsRouteRouteChildren = {
   mainLayoutFruitsLemonRoute: mainLayoutFruitsLemonRoute,
   mainLayoutFruitsMandarinRoute: mainLayoutFruitsMandarinRoute,
+  mainLayoutFruitsPomegranateRoute: mainLayoutFruitsPomegranateRoute,
   mainLayoutFruitsIndexRoute: mainLayoutFruitsIndexRoute,
 }
 
