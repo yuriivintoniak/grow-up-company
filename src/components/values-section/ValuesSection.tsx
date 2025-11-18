@@ -1,4 +1,5 @@
 import { valuesData } from "./data.values";
+import { Link } from "@tanstack/react-router";
 import styles from "./ValuesSection.module.css";
 
 export default function ValuesSection() {
@@ -6,12 +7,16 @@ export default function ValuesSection() {
     <div className={styles.valuesSection}>
       <div className={styles.values}>
         {valuesData.map((value) => (
-          <div key={value.id} className={styles.valueItem}>
+          <Link
+            key={value.title}
+            to={value.href}
+            className={styles.valueItem}
+          >
             <img src={value.image} alt={value.title} />
             <h3 className={styles.valueTitle}>
               {value.title}
             </h3>
-          </div>
+          </Link>
         ))}
       </div>
     </div>

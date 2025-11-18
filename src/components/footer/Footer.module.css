@@ -37,6 +37,11 @@
   letter-spacing: 0%;
 }
 
+.columnTitle a {
+  color: inherit;
+  text-decoration: none;
+}
+
 .menuColumn:not(:last-child) .columnTitle {
   padding-left: 6px;
 }
@@ -59,6 +64,36 @@
   letter-spacing: 0%;
   display: flex;
   align-items: center;
+}
+
+.menuLink {
+  color: inherit;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.menuLink:hover {
+  opacity: 0.8;
+}
+
+/* Corporate column - no hover on title, but hover on items */
+.corporateColumn .columnTitle a {
+  cursor: default;
+}
+
+.corporateColumn .menuLink:hover {
+  opacity: 0.8;
+}
+
+/* Contacts column - no hover on items, but hover on title */
+.contactsColumn .menuLink {
+  cursor: default;
+}
+
+.contactsColumn .menuLink:hover {
+  opacity: 1;
 }
 
 .menuListIcon {

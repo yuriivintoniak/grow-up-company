@@ -50,6 +50,8 @@
   overflow: hidden;
   position: relative;
   transition: border-color 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .heroButton::before {
