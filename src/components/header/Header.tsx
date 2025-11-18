@@ -7,9 +7,12 @@ import {
 import logo from "@/assets/Logo.svg";
 import styles from "./Header.module.css";
 import { headerMenuItems } from "./data.header";
+import { useNavigate } from "@tanstack/react-router";
 import { ChevronDown, ChevronRight } from "lucide-react";
 
 export default function Header() {
+  const navigate = useNavigate();
+
   return (
     <header className={styles.header}>
       <img src={logo} alt="Grow Up Company Logo" className={styles.logo} />
@@ -49,7 +52,10 @@ export default function Header() {
           ))}
         </ul>
       </nav>
-      <button className={styles.contactButton}>
+      <button 
+        className={styles.contactButton} 
+        onClick={() => navigate({ to: "/contacts" })}
+      >
         Contact
       </button>
     </header>

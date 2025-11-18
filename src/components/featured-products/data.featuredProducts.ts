@@ -8,50 +8,50 @@ import cucumbers from "@/assets/products/photo-7.png";
 import pomegranates from "@/assets/products/photo-6.png";
 
 type FeaturedProduct = {
-  id: number;
   name: string;
   image: string;
+  path: string;
 };
 
 export const featuredProducts: FeaturedProduct[] = [
   {
-    id: 1,
     image: pomegranates,
     name: "Pomegranates",
+    path: "/fruits/pomegranate",
   },
   {
-    id: 2,
     image: cucumbers,
     name: "Cucumbers",
+    path: "/vegetables/cucumber",
   },
   {
-    id: 3,
     image: tomatoes,
     name: "Tomatoes",
+    path: "/vegetables/tomatoe",
   },
   {
-    id: 4,
     image: lemons,
     name: "Lemons",
+    path: "/fruits/lemon",
   },
   {
-    id: 5,
     image: squashes,
     name: "Squashes",
+    path: "/vegetables/squash",
   },
   {
-    id: 6,
     image: mandarins,
     name: "Mandarins",
+    path: "/fruits/mandarin",
   },
   {
-    id: 7,
     image: zucchini,
     name: "Zucchini",
+    path: "/vegetables/zucchini",
   },
   {
-    id: 8,
     image: peppers,
     name: "Peppers",
+    path: "/vegetables/pepper",
   },
 ];

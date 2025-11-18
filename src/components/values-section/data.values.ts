@@ -3,25 +3,25 @@ import visionMission from "@/assets/values-section/photo-vision.png";
 import sustainability from "@/assets/values-section/photo-sus.png";
 
 type ValuesDataItem = {
-  id: number;
   image: string;
   title: string;
+  href: string;
 };
 
 export const valuesData: ValuesDataItem[] = [
   {
-    id: 1,
     image: qualityPolicy,
     title: "Quality policy",
+    href: "/quality-policy",
   },
   {
-    id: 2,
     image: visionMission,
     title: "Vision mission",
+    href: "/vision-mission",
   },
   {
-    id: 3,
     image: sustainability,
     title: "Sustainability",
+    href: "/sustainabillity",
   },
 ];

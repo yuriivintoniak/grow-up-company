@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ContactsRouteImport } from './routes/contacts'
 import { Route as mainLayoutRouteRouteImport } from './routes/(main-layout)/route'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as mainLayoutAboutUsRouteImport } from './routes/(main-layout)/about-us'
@@ -28,6 +29,11 @@ import { Route as mainLayoutvaluesVisionMissionRouteImport } from './routes/(mai
 import { Route as mainLayoutvaluesSustainabillityRouteImport } from './routes/(main-layout)/(values)/sustainabillity'
 import { Route as mainLayoutvaluesQualityPolicyRouteImport } from './routes/(main-layout)/(values)/quality-policy'
 
+const ContactsRoute = ContactsRouteImport.update({
+  id: '/contacts',
+  path: '/contacts',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const mainLayoutRouteRoute = mainLayoutRouteRouteImport.update({
   id: '/(main-layout)',
   getParentRoute: () => rootRouteImport,
@@ -132,6 +138,7 @@ const mainLayoutvaluesQualityPolicyRoute =
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/contacts': typeof ContactsRoute
   '/fruits': typeof mainLayoutFruitsRouteRouteWithChildren
   '/vegetables': typeof mainLayoutVegetablesRouteRouteWithChildren
   '/about-us': typeof mainLayoutAboutUsRoute
@@ -151,6 +158,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/contacts': typeof ContactsRoute
   '/about-us': typeof mainLayoutAboutUsRoute
   '/quality-policy': typeof mainLayoutvaluesQualityPolicyRoute
   '/sustainabillity': typeof mainLayoutvaluesSustainabillityRoute
@@ -170,6 +178,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/(main-layout)': typeof mainLayoutRouteRouteWithChildren
+  '/contacts': typeof ContactsRoute
   '/(main-layout)/fruits': typeof mainLayoutFruitsRouteRouteWithChildren
   '/(main-layout)/vegetables': typeof mainLayoutVegetablesRouteRouteWithChildren
   '/(main-layout)/about-us': typeof mainLayoutAboutUsRoute
@@ -191,6 +200,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/contacts'
     | '/fruits'
     | '/vegetables'
     | '/about-us'
@@ -210,6 +220,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/contacts'
     | '/about-us'
     | '/quality-policy'
     | '/sustainabillity'
@@ -228,6 +239,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/(main-layout)'
+    | '/contacts'
     | '/(main-layout)/fruits'
     | '/(main-layout)/vegetables'
     | '/(main-layout)/about-us'
@@ -249,10 +261,18 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   mainLayoutRouteRoute: typeof mainLayoutRouteRouteWithChildren
+  ContactsRoute: typeof ContactsRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/contacts': {
+      id: '/contacts'
+      path: '/contacts'
+      fullPath: '/contacts'
+      preLoaderRoute: typeof ContactsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/(main-layout)': {
       id: '/(main-layout)'
       path: ''
@@ -450,6 +470,7 @@ const mainLayoutRouteRouteWithChildren = mainLayoutRouteRoute._addFileChildren(
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   mainLayoutRouteRoute: mainLayoutRouteRouteWithChildren,
+  ContactsRoute: ContactsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
