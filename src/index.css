@@ -25,6 +25,19 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
+  --value-item-shadow: 
+    1px 10px 22px 0px #0000001A,
+    5px 39px 39px 0px #00000017,
+    11px 88px 53px 0px #0000000D,
+    19px 157px 63px 0px #00000003,
+    29px 245px 69px 0px #00000000;
+
+  --value-item-shadow-hover:
+    1px 16px 28px 0px #00000033,
+    5px 48px 48px 0px #00000026,
+    11px 96px 64px 0px #0000001a,
+    19px 168px 72px 0px #0000000d;
+
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
