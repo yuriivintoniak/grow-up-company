@@ -103,7 +103,7 @@
   flex-direction: column;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1023px) {
  .heroSection {
     padding: 0 102px;
     min-height: 100vh;
@@ -123,5 +123,9 @@
     font-size: 17px;
     line-height: 100%;
     border: 2px solid #FFF;
+  }
+
+  .sectionFooterWrapper {
+    height: auto;
   }
 }
