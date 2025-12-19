@@ -13,7 +13,9 @@ export default function Home() {
       <div className={styles.heroSection}>
         <Header />
         <h1 className={styles.heroTitle}>
-          The freshest from nature perfectly prepared and delivered to you
+          {`The freshest from
+          nature perfectly prepared
+          and delivered to you`}
         </h1>
         <button 
           className={styles.heroButton}
@@ -23,7 +25,7 @@ export default function Home() {
         </button>
       </div>
       <FeaturedProducts />
-      <div className={styles.sectionFooterWrapper}>
+      <div className={styles.footerLayout}>
         <ValuesSection />
         <Footer />
       </div>
