@@ -10,3 +10,9 @@
   object-fit: cover;
   object-position: center;
 }
+
+@media (max-width: 1023px) {
+  .topBanner {
+    min-height: 270px;
+  }
+}

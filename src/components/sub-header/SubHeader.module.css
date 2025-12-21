@@ -163,3 +163,37 @@
   cursor: pointer;
   background-color: transparent;
 }
+
+@media (max-width: 1023px) {
+  .subHeader {
+    margin: 0.625rem 4rem 0;
+    padding-bottom: 0.625rem;
+    border-bottom: 2px solid #FFF;
+  }
+
+  .logo {
+    width: 67px;
+    height: 69px;
+  }
+
+  .menu {
+    gap: 1.5rem;
+  }
+
+  .menuItem {
+    font-size: 15px;
+    line-height: 100%;
+  }
+
+  .menuTriggerIcon {
+    width: 13px;
+    height: 13px;
+  }
+
+  .contactButton {
+    padding: 0.6rem 2rem;
+    font-size: 15px;
+    line-height: 100%;
+    border: 2px solid #FFF;
+  }
+}
