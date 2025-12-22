@@ -7,9 +7,11 @@ export const Route = createFileRoute("/(main-layout)")({
   component: () => {
     return (
       <div className="min-h-screen flex flex-col relative">
-        <TopBanner />
-        <SubHeader />
-        <main className="px-36 py-28">
+        <div>
+          <TopBanner />
+          <SubHeader />
+        </div>
+        <main className="px-36 py-28 max-[1024px]:px-16 max-[1024px]:py-8">
           <Outlet />
         </main>
         <Footer />
