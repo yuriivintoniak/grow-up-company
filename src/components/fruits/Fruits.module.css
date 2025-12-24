@@ -35,10 +35,4 @@
     grid-template-columns: repeat(auto-fit, minmax(min(180px, 100%), 1fr));
     gap: 2rem;
   }
-
-  .images img {
-    max-width: 100%;
-    height: auto;
-    object-fit: contain;
-  }
 }
