@@ -27,7 +27,7 @@
 .productInformation {
   color: #000;
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.25;
   display: flex;
   gap: 0.2rem;
@@ -62,4 +62,54 @@
   width: 100%;
   height: auto;
   object-fit: contain;
+}
+
+@media (max-width: 1023px) {
+  .textBlock {
+    gap: 1rem;
+  }
+
+  .title {
+    font-size: 2.875rem;
+  }
+
+  .subtitle {
+    font-size: 1.375rem;
+  }
+
+  .productInformation {
+    font-size: 1rem;
+    gap: 0.1rem;
+  }
+
+  .imageContainer {
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: 230px 70px;
+  }
+
+  .largeImage {
+    width: 230px;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .smallImages {
+    cursor: pointer;
+    display: grid;
+    gap: 0.625rem;
+    grid-template-rows: repeat(3, 70px);
+  }
+
+  .smallImages img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .smallImageFromLarge {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
 }
