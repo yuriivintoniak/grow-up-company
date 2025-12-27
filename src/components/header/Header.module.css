@@ -62,9 +62,9 @@
   left: 0;
   width: 100%;
   height: 3px;
-  background-color: #FFF;
   transform: scaleX(0);
   transform-origin: left;
+  background-color: #FFF;
   transition: transform 0.4s ease;
 }
 
@@ -101,10 +101,10 @@
   left: 0;
   width: 100%;
   height: 3px;
-  background-color: #FFF;
-  border-radius: 100px 100px 0 0;
   transform: scaleX(0);
   transform-origin: left;
+  background-color: #FFF;
+  border-radius: 100px 100px 0 0;
   transition: transform 0.4s ease;
 }
 
@@ -115,10 +115,10 @@
   right: 0;
   width: 100%;
   height: 3px;
-  background-color: #FFF;
-  border-radius: 0 0 100px 100px;
   transform: scaleX(0);
   transform-origin: right;
+  background-color: #FFF;
+  border-radius: 0 0 100px 100px;
   transition: transform 0.4s ease;
 }
 
@@ -167,4 +167,38 @@
 .dropdownItem:focus-visible {
   cursor: pointer;
   background-color: transparent;
+}
+
+@media (max-width: 1023px) {
+  .header {
+    margin: 0.625rem 4rem 0;
+    padding-bottom: 0.625rem;
+    border-bottom: 2px solid #FFF;
+  }
+
+  .logo {
+    width: 67px;
+    height: 69px;
+  }
+
+  .menu {
+    gap: 1.5rem;
+  }
+
+  .menuItem {
+    font-size: 15px;
+    line-height: 100%;
+  }
+
+  .menuTriggerIcon {
+    width: 13px;
+    height: 13px;
+  }
+
+  .contactButton {
+    padding: 0.6rem 2rem;
+    font-size: 15px;
+    line-height: 100%;
+    border: 2px solid #FFF;
+  }
 }

@@ -22,7 +22,7 @@ export default function Pomegranate() {
         </h3>
         <div className={styles.productInformation}>
           <p>Product: pomegranate</p>
-          <p>Variety: caliber 7, caliber 9, caliber 12, caliber 14</p>
+          <p>Variety: caliber&nbsp;7, caliber&nbsp;9, caliber&nbsp;12, caliber&nbsp;14</p>
           <p>Season: September - February</p>
           <p>Origin: Turkey</p>
         </div>

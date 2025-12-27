@@ -1,6 +1,6 @@
 .heroSection {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   color: #FFF;
   padding: 0 144px;
   text-align: left;
@@ -19,12 +19,12 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url("@/assets/main-photo.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   z-index: -1;
   filter: brightness(0.8);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url("@/assets/main-photo.png");
 }
 
 .heroTitle {
@@ -45,13 +45,13 @@
   letter-spacing: 0%;
   cursor: pointer;
   border-radius: 100px;
+  text-decoration: none;
+  display: inline-block;
   border: 3px solid #FFF;
   background-color: transparent;
   overflow: hidden;
   position: relative;
   transition: border-color 0.3s ease;
-  text-decoration: none;
-  display: inline-block;
 }
 
 .heroButton::before {
@@ -61,10 +61,10 @@
   left: 0;
   width: 100%;
   height: 3px;
-  background-color: #FFF;
-  border-radius: 100px 100px 0 0;
   transform: scaleX(0);
   transform-origin: left;
+  background-color: #FFF;
+  border-radius: 100px 100px 0 0;
   transition: transform 0.4s ease;
 }
 
@@ -75,10 +75,10 @@
   right: 0;
   width: 100%;
   height: 3px;
-  background-color: #FFF;
-  border-radius: 0 0 100px 100px;
   transform: scaleX(0);
   transform-origin: right;
+  background-color: #FFF;
+  border-radius: 0 0 100px 100px;
   transition: transform 0.4s ease;
 }
 
@@ -96,9 +96,36 @@
   transform-origin: right;
 }
 
-.sectionFooterWrapper {
+.footerLayout {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+@media (max-width: 1023px) {
+ .heroSection {
+    min-height: 30rem;
+    padding: 2rem 4rem;
+  }
+
+  .heroTitle {
+    margin: 4rem 0 1.25rem 0;
+    white-space: pre-line;
+    color: #FFF;
+    font-size: 2.2rem;
+    font-weight: 600;
+    line-height: 3.125rem;
+  }
+
+  .heroButton {
+    padding: 0.85rem 2.5rem;
+    font-size: 1rem;
+    line-height: 100%;
+    border: 2px solid #FFF;
+  }
+
+  .footerLayout {
+    min-height: auto;
+  }
 }

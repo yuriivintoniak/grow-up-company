@@ -25,7 +25,7 @@ export default function Header() {
                   <DropdownMenuTrigger asChild>
                     <button type="button" className={styles.menuTrigger}>
                       <span>{item.label}</span>
-                      <ChevronDown size={24} />
+                      <ChevronDown size={24} className={styles.menuTriggerIcon} />
                     </button>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent

@@ -22,7 +22,7 @@ export default function Pepper() {
         </h3>
         <div className={styles.productInformation}>
           <p>Product: pepper</p>
-          <p>Variety: california red, california yellow, kapia <br /> chili red, chili green</p>
+          <p>Variety: california red, california <br /> yellow, kapia chili red, chili green</p>
           <p>Size: 70-120 mm (length)</p>
           <p>Season: November - June</p>
           <p>Origin: Turkey</p>
