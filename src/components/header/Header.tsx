@@ -6,6 +6,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import logo from "@/assets/Logo.svg";
 import styles from "./Header.module.css";
+import burger from "@/assets/burger-icon.png";
 import { headerMenuItems } from "./data.header";
 import { useNavigate } from "@tanstack/react-router";
 import { ChevronDown, ChevronRight } from "lucide-react";
@@ -58,6 +59,7 @@ export default function Header() {
       >
         Contact
       </button>
+      <img src={burger} alt="Menu Button" className={styles.menuButton} />
     </header>
   );
 }
