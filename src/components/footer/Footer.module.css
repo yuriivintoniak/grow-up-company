@@ -149,3 +149,43 @@
     gap: 4px;
   }
 }
+
+@media (max-width: 767px) {
+  .footer {
+    padding: 2.125rem;
+  }
+
+  .footerContent {
+    grid-template-columns: auto auto auto;
+  }
+
+  .logoFooter {
+    width: 144px;
+    height: 157px;
+  }
+
+  .contactsColumn {
+    margin-bottom: 25px;
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-self: center;
+  }
+
+  .columnTitle {
+    text-align: center;
+    font-size: 16px;
+  }
+
+  .menuColumn:not(:last-child) .columnTitle {
+    padding-left: 0;
+  }
+
+  .menuListItem {
+    font-size: 8px;
+    justify-content: center;
+  }
+
+  .menuListIcon {
+    display: none;
+  }
+}
