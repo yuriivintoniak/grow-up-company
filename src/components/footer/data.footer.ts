@@ -13,10 +13,10 @@ export const footerMenuItems: FooterMenuItem[] = [
   {
     label: "Corporate",
     options: [
-      { label: "Vision mission", href: "/vision-mission" },
-      { label: "Quality policy", href: "/quality-policy" },
-      { label: "Sustainability", href: "/sustainabillity" },
       { label: "About us", href: "/about-us" },
+      { label: "Quality policy", href: "/quality-policy" },
+      { label: "Vision mission", href: "/vision-mission" },
+      { label: "Sustainability", href: "/sustainabillity" },
     ],
   },
   {
