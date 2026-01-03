@@ -155,6 +155,16 @@
     padding: 2.125rem;
   }
 
+  .columnTitle {
+    font-size: 20px;
+  }
+
+  .menuListItem {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 620px) {
   .footerContent {
     grid-template-columns: auto auto auto;
   }
