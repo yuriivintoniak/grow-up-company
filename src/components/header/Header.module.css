@@ -169,10 +169,6 @@
   background-color: transparent;
 }
 
-.menuButton {
-  display: none;
-}
-
 @media (max-width: 1023px) {
   .header {
     margin: 0.625rem 4rem 0;
@@ -219,9 +215,5 @@
 
   .contactButton {
     display: none;
-  }
-
-  .menuButton {
-    display: inline-flex;
   }
 }
