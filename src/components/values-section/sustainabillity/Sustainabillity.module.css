@@ -57,7 +57,45 @@
 
   .imageContainer img {
     max-width: 230px;
-    height: auto;
-    object-fit: contain;
+  }
+}
+
+@media (max-width: 767px) {
+  .sustainabillitySection {
+    gap: 2rem;
+  }
+
+  .textBlock {
+    max-width: 100%;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .description {
+    font-size: 0.875rem;
+  }
+
+  .imageContainer img {
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 620px) {
+  .sustainabillitySection {
+    flex-direction: column-reverse;
+  }
+
+  .textBlock {
+    max-width: 26.25rem;
+  }
+
+  .description {
+    font-size: 1.25rem;
+  }
+
+  .imageContainer img {
+    max-width: 100%;
   }
 }

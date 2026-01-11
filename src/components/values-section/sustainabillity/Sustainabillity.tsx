@@ -1,5 +1,5 @@
 import styles from "./Sustainabillity.module.css";
-import sustainability from "@/assets/main-layout/values-pages/photo-sustainibillity.png";
+import photoSus from "@/assets/main-layout/values-pages/photo-sus.png";
 
 export default function Sustainabillity() {
   return (
@@ -17,7 +17,7 @@ export default function Sustainabillity() {
         </p>
       </div>
       <div className={styles.imageContainer}>
-        <img src={sustainability} alt="Sustainability" />
+        <img src={photoSus} alt="Sustainability" />
       </div>
     </section>
   );
