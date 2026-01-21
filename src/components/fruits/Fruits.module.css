@@ -36,3 +36,14 @@
     gap: 2rem;
   }
 }
+
+@media (max-width: 620px) {
+  .title {
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+  }
+
+  .images {
+    grid-template-columns: auto;
+  }
+}
