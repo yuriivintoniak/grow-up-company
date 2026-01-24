@@ -1,4 +1,4 @@
-import cucumberLarge1 from "@/assets/main-layout/vegetables/cucumber/large/1-cucumber-large.png";
+import cucumberLarge1 from "@/assets/main-layout/vegetables/cucumber/large/1-cucumber-large-1.png";
 import cucumberLarge2 from "@/assets/main-layout/vegetables/cucumber/large/2-cucumber-large.png";
 import cucumberLarge3 from "@/assets/main-layout/vegetables/cucumber/large/3-cucumber-large.png";
 import cucumberLarge4 from "@/assets/main-layout/vegetables/cucumber/large/4-cucumber-large.png";
