@@ -1,4 +1,4 @@
-import pepperLarge1 from "@/assets/main-layout/vegetables/pepper/large/1-pepper-large.png";
+import pepperLarge1 from "@/assets/main-layout/vegetables/pepper/large/1-pepper-large-1.png";
 import pepperLarge2 from "@/assets/main-layout/vegetables/pepper/large/2-pepper-large.png";
 import pepperLarge3 from "@/assets/main-layout/vegetables/pepper/large/3-pepper-large.png";
 import pepperLarge4 from "@/assets/main-layout/vegetables/pepper/large/4-pepper-large.png";
