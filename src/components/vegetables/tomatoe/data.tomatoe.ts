@@ -1,4 +1,4 @@
-import tomatoeLarge1 from "@/assets/main-layout/vegetables/tomatoe/large/1-tomatoe-large.png";
+import tomatoeLarge1 from "@/assets/main-layout/vegetables/tomatoe/large/1-tomatoe-large-1.png";
 import tomatoeLarge2 from "@/assets/main-layout/vegetables/tomatoe/large/2-tomatoe-large.png";
 import tomatoeLarge3 from "@/assets/main-layout/vegetables/tomatoe/large/3-tomatoe-large.png";
 import tomatoeLarge4 from "@/assets/main-layout/vegetables/tomatoe/large/4-tomatoe-large.png";
