@@ -1,4 +1,4 @@
-import mandarinLarge1 from "@/assets/main-layout/fruits/mandarin/large/1-mandarin-large.png";
+import mandarinLarge1 from "@/assets/main-layout/fruits/mandarin/large/1-mandarin-large-1.png";
 import mandarinLarge2 from "@/assets/main-layout/fruits/mandarin/large/2-mandarin-large.png";
 import mandarinLarge3 from "@/assets/main-layout/fruits/mandarin/large/3-mandarin-large.png";
 import mandarinLarge4 from "@/assets/main-layout/fruits/mandarin/large/4-mandarin-large.png";
