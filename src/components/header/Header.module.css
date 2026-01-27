@@ -202,3 +202,18 @@
     border: 2px solid #FFF;
   }
 }
+
+@media (max-width: 767px) {
+  .header {
+    margin: 0.875rem 2.125rem 0;
+    border-bottom: none;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .contactButton {
+    display: none;
+  }
+}

@@ -1,4 +1,4 @@
-import squashLarge1 from "@/assets/main-layout/vegetables/squash/large/1-squash-large.png";
+import squashLarge1 from "@/assets/main-layout/vegetables/squash/large/1-squash-large-1.png";
 import squashLarge2 from "@/assets/main-layout/vegetables/squash/large/2-squash-large.png";
 import squashLarge3 from "@/assets/main-layout/vegetables/squash/large/3-squash-large.png";
 import squashLarge4 from "@/assets/main-layout/vegetables/squash/large/4-squash-large.png";

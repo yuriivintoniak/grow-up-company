@@ -11,7 +11,7 @@ export const Route = createFileRoute("/(main-layout)")({
           <TopBanner />
           <Header />
         </div>
-        <main className="px-36 py-28 max-[1024px]:px-16 max-[1024px]:py-8">
+        <main className="px-36 py-28 max-[1024px]:px-16 max-[1024px]:py-8 max-[767px]:p-8.5">
           <Outlet />
         </main>
         <Footer />

@@ -1,4 +1,4 @@
-import zucchiniLarge1 from "@/assets/main-layout/vegetables/zucchini/large/1-zucchini-large.png";
+import zucchiniLarge1 from "@/assets/main-layout/vegetables/zucchini/large/1-zucchini-large-1.png";
 import zucchiniLarge2 from "@/assets/main-layout/vegetables/zucchini/large/2-zucchini-large.png";
 import zucchiniLarge3 from "@/assets/main-layout/vegetables/zucchini/large/3-zucchini-large.png";
 import zucchiniLarge4 from "@/assets/main-layout/vegetables/zucchini/large/4-zucchini-large.png";

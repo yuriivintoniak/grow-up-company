@@ -1,4 +1,4 @@
-import lemonLarge1 from "@/assets/main-layout/fruits/lemon/large/1-lemon-large.png";
+import lemonLarge1 from "@/assets/main-layout/fruits/lemon/large/1-lemon-large-1.png";
 import lemonLarge2 from "@/assets/main-layout/fruits/lemon/large/2-lemon-large.png";
 import lemonLarge3 from "@/assets/main-layout/fruits/lemon/large/3-lemon-large.png";
 import lemonLarge4 from "@/assets/main-layout/fruits/lemon/large/4-lemon-large.png";

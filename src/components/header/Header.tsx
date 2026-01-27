@@ -9,6 +9,7 @@ import styles from "./Header.module.css";
 import { headerMenuItems } from "./data.header";
 import { useNavigate } from "@tanstack/react-router";
 import { ChevronDown, ChevronRight } from "lucide-react";
+import MobileMenu from "@/components/mobile-menu/MobileMenu";
 
 export default function Header() {
   const navigate = useNavigate();
@@ -16,6 +17,7 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <img src={logo} alt="Grow Up Company Logo" className={styles.logo} />
+
       <nav className={styles.nav}>
         <ul className={styles.menu}>
           {headerMenuItems.map((item) => (
@@ -52,12 +54,15 @@ export default function Header() {
           ))}
         </ul>
       </nav>
+
       <button 
         className={styles.contactButton} 
         onClick={() => navigate({ to: "/contacts" })}
       >
         Contact
       </button>
+
+      <MobileMenu />
     </header>
   );
 }

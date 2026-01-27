@@ -1,4 +1,4 @@
-import pomegranateLarge1 from "@/assets/main-layout/fruits/pomegranate/large/1-pomegranate-large.png";
+import pomegranateLarge1 from "@/assets/main-layout/fruits/pomegranate/large/1-pomegranate-large-1.png";
 import pomegranateLarge2 from "@/assets/main-layout/fruits/pomegranate/large/2-pomegranate-large.png";
 import pomegranateLarge3 from "@/assets/main-layout/fruits/pomegranate/large/3-pomegranate-large.png";
 import pomegranateLarge4 from "@/assets/main-layout/fruits/pomegranate/large/4-pomegranate-large.png";

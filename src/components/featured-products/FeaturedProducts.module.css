@@ -104,3 +104,20 @@
     height: 24px;
   }
 }
+
+@media (max-width: 767px) {
+  .container {
+    padding: 2.125rem;
+  }
+
+  .products {
+    gap: 2rem;
+  }
+
+  .productButton {
+    left: 20px;
+    bottom: 20px;
+    width: 42px;
+    height: 42px;
+  }
+}
