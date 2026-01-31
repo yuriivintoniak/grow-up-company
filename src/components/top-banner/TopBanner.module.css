@@ -11,6 +11,12 @@
   object-position: center;
 }
 
+@media (max-width: 1440px) {
+  .topBanner {
+    min-height: 300px;
+  }
+}
+
 @media (max-width: 1023px) {
   .topBanner {
     min-height: 270px;
