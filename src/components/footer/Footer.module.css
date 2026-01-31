@@ -100,6 +100,52 @@
   color: #FFF;
 }
 
+@media (max-width: 1440px) {
+  .footer {
+    padding: 5rem;
+  }
+
+  .footerContent {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 1.5rem;
+  }
+
+  .logoFooter {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: 185px;
+    height: 210px;
+    margin-right: 0;
+    margin-bottom: 2.5rem;
+  }
+
+  .menuColumn {
+    gap: 1.25rem;
+  }
+
+  .columnTitle {
+    font-size: 2.125rem;
+  }
+
+  .menuColumn:not(:last-child) .columnTitle {
+    padding-left: 0.3125rem;
+  }
+
+  .menuListItem {
+    font-size: 1rem;
+  }
+
+  .menuListIcon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .menuLink {
+    gap: 0.3125rem;
+  }
+}
+
 @media (max-width: 1023px) { 
   .footer {
     padding: 2rem 4rem;
