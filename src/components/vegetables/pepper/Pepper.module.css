@@ -64,6 +64,45 @@
   object-fit: contain;
 }
 
+@media (max-width: 1440px) {
+  .pepperSection {
+    gap: 2rem;
+  }
+
+  .textBlock {
+    gap: 1.25rem;
+  }
+
+  .title {
+    font-size: 3.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.875rem;
+  }
+
+  .productInformation {
+    font-size: 1.40625rem;
+    gap: 0.15rem;
+  }
+
+  .imageContainer {
+    gap: 1.5625rem;
+    grid-template-columns: 340px 100px;
+  }
+
+  .largeImage {
+    width: 340px;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .smallImages {
+    gap: 1.25rem;
+    grid-template-rows: repeat(3, 100px);
+  }
+}
+
 @media (max-width: 1023px) {
   .textBlock {
     gap: 1rem;
