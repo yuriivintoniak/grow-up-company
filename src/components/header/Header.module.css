@@ -169,6 +169,46 @@
   background-color: transparent;
 }
 
+@media (max-width: 1440px) {
+  .header {
+    margin: 0.625rem 5rem 0;
+    padding-bottom: 0.625rem;
+    border-bottom-width: 2px;
+  }
+
+  .logo {
+    width: 92px;
+    height: 95px;
+  }
+
+  .menu {
+    gap: 1.75rem;
+  }
+
+  .menuItem {
+    font-size: 1.25rem;
+  }
+
+  .menuTriggerIcon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .contactButton {
+    padding: 0.65rem 2.45rem;
+    font-size: 1.25rem;
+    border-width: 2px;
+  }
+
+  .contactButton::before {
+    height: 2px;
+  }
+
+  .contactButton::after {
+    height: 2px;
+  }
+}
+
 @media (max-width: 1023px) {
   .header {
     margin: 0.625rem 4rem 0;

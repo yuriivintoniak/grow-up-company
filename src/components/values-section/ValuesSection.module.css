@@ -32,6 +32,25 @@
   box-shadow: var(--value-item-shadow-hover);
 }
 
+@media (max-width: 1440px) {
+  .valuesSection {
+    padding: 5rem;
+  }
+
+  .values {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+  }
+
+  .valueItem {
+    padding: 1.5rem 2rem;
+  }
+
+  .valueTitle {
+    font-size: 1.625rem;
+  }
+}
+
 @media (max-width: 1023px) {
   .valuesSection {
     padding: 2rem 4rem;

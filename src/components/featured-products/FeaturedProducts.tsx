@@ -11,9 +11,9 @@ export default function FeaturedProducts() {
       <div className={styles.products}>
         {featuredProducts.map((product) => (
           <div key={product.name} className={styles.product}>
-            <button 
-              type="button" 
-              className={styles.productButton} 
+            <button
+              type="button"
+              className={styles.productButton}
               aria-label={`View ${product.name}`}
               onClick={() => navigate({ to: product.path })}
             >
